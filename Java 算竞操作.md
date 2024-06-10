@@ -144,14 +144,6 @@ public class Main {
 
 ## BigInteger 常用 API
 
-****
-
-### 初始化
-
-****
-
-
-
 
 
 
