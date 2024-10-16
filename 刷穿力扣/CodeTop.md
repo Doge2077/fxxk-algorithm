@@ -147,3 +147,35 @@ class LRUCache {
  */
 ```
 
+****
+
+## [206. 反转链表](https://leetcode.cn/problems/reverse-linked-list/)
+
+****
+
+- 利用两个指针，l 和 r
+- r：指向当前节点，初始化为 head
+- l：指向 r 的前一个节点，初始化为 null
+- 翻转过程：
+  - 用 t 暂存 r 的下一个节点
+  - 使得 r -> l，即 r.next = l;
+  - 更新 l = r，即 l = r
+  - 将 r 后移，即 r = t;
+- 所有节点反转完毕后，l 就是新链表的头节点
+
+```java
+class Solution {
+    public ListNode reverseList(ListNode head) {
+        ListNode l = null, r = head;
+        while (r != null) {
+            ListNode t = r.next;
+            r.next = l;
+            l = r;
+            r = t;
+        }
+        return l;
+    }
+}
+```
+
+****
